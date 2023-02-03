@@ -49,13 +49,36 @@ const OUR_PLANET = 'Earth';
 let username = prompt("Please enter your username");
 console.log("Your name is " + username);
 
-// Prompt the user to enter their birth day in the format "MM/DD/YYYY"
+/* Prompt the user to enter their birth day in the format "MM/DD/YYYY"
 let birthday = prompt("Please enter your birth day (MM/DD/YYYY)");
-// Convert the user's birth day string into a date object
+ Convert the user's birth day string into a date object
 let birthdate = new Date(birthday);
 if (isNaN(birthdate.getTime())) {
     console.error("Invalid birth date. Please enter a date in the format MM/DD/YYYY.");
-} //isNan is not a number es lo que arrojaría como true si no es una fecha válida
+} isNan is not a number es lo que arrojaría como true si no es una fecha válida
+ESTE COMENTARIO ES CÓDIGO VIEJO DE PRÁCTICA PERO SIN EL LOOP NO ES ÚTIL EL CARTEL DE ERROR CON LA FECHA*/
+
+// Use a for loop to continuously prompt the user for their birthdate
+for (let i = 0; i < 3; i++) {
+    birthday = prompt("Please enter your birth day (MM/DD/YYYY)");
+    birthdate = new Date(birthday);
+  
+    // Check if the birthdate is a valid date
+    if (!isNaN(birthdate.getTime())) {
+      // If the birthdate is a valid date, break out of the loop
+      break;
+    } else {
+      // If the birthdate is not a valid date, show an error message
+      console.error("Invalid birth date. Please enter a date in the format MM/DD/YYYY.");
+    }
+  }
+  
+  // If a valid birthdate was not entered after three attempts, show an error message
+  if (isNaN(birthdate.getTime())) {
+    console.error("Too many attempts. Please try again later.");
+  } else {
+    console.log("Your birthdate is " + birthdate);
+  }
 console.log("your birthday is "+ birthday);
 // Get the current date
 
