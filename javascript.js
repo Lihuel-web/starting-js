@@ -47,10 +47,12 @@ admin = Name;
 alert(admin);
 
 const OUR_PLANET = 'Earth';
+let username
+
 function confirmAction() { //hay que sacar la función de adentro del for porque declarada adentro del for 
-  //pierde el scope el break
+  //pierde el scope el break. Además tuve que sacar la declaración let de username de la función
 for (let i = 0; i < 3; i++) {
-let username = prompt("Please enter your username"); //acá voy a crear un loop para confirmar el nombre para practicar
+username = prompt("Please enter your username"); //acá voy a crear un loop para confirmar el nombre para practicar
 let confirmAction = confirm("Your name is " + username + " ¿shall we continue?");//voy a cambiar los console.log por
 //alerts y acá el alert por un confirm button
 if (confirmAction == true) {
@@ -97,6 +99,7 @@ for (let i = 0; i < 3; i++) { //el let de acá sirve para crear dos variables, l
   // If a valid birthdate was not entered after three attempts, show an error message
   if (isNaN(birthdate.getTime())) {
     alert("Too many attempts. Please try again later.");
+    process.exit();
   } else {
     alert("Your birthdate is " + birthdate);
   }
@@ -218,3 +221,20 @@ because the latter has some type coercion rules, meaning it can implicitly conve
 the operands before comparing them. The strict equality operator avoids this type coercion and ensures a
 more accurate comparison of values.
 */
+ //RESULTA QUE NO ES PRECISO sólo restar la fecha actual y la de cumpleaños porq está en milisegundos y no tiene en cuenta
+ //los años bisiestos o leap year (raro febrero). Esta es una forma opcional más corta para calcular la edad
+function calculateAge(birthdate) {
+  let today = new Date();
+  let ageInMilliseconds = today - birthdate; //no exacto
+  let ageDate = new Date(ageInMilliseconds);
+  let years = ageDate.getUTCFullYear() - 1970; //por la referencia de 1970 para today ms
+  let months = ageDate.getUTCMonth();
+  let days = ageDate.getUTCDate() - 1;
+  return years + " years, " + months + " months, and " + days + " days";
+}
+let Edad = calculateAge(birthdate);
+document.addEventListener("DOMContentLoaded", function() {
+  let p1 = document.createElement("p");
+  p1.innerHTML = "So, " + username + " your exact age is: " + Edad;
+  document.body.appendChild(p1);
+    });
