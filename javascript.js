@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
 let p1 = document.createElement("p");
 p1.innerHTML = "estamos en el mes " + today.getMonth() +
               "<br><br> naciste en el mes de " + birthdate.getMonth() + 
-              "<br><br> your age taking the months into account is " + age;
+              "<br><br> your age taking the months into account is " + age; //en realidad todavía no tomo en cuenta los meses
 document.body.appendChild(p1);
   });
 //ojoooo esto da menos uno al mes porque está basado en que enero es el mes cero wooow
@@ -186,7 +186,7 @@ if (today.getDate() < birthdate.getDate()) {
       });
 }
 
-if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) { 
+if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) { //m era el mes de hoy menos el mes del cumpleaños
     age--;
 }
 
@@ -205,7 +205,11 @@ So, if either of these conditions is true, it means that the user's birthday has
 and we decrement the age by 1.*/
 
 // Write the user's age to the web page
-document.write("Your age is: " + age);
+document.addEventListener("DOMContentLoaded", function() {
+  let p1 = document.createElement("p");
+  p1.innerHTML = "Your age is: " + age;
+  document.body.appendChild(p1);
+    });
 
 /*For example, 1 === 1 returns true, but 1 === "1" returns false, because one is an integer and the other is a string.
 
