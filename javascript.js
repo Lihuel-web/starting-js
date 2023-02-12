@@ -88,7 +88,37 @@ for (let i = 0; i < 3; i++) { //el let de acá sirve para crear dos variables, l
     //DEL LOOP Y AHÍ SE QUEDAN. lo que hay que hacer es quitar el let para que sólo se actualicen las variables ya declaradas
     // Check if the birthdate is a valid date
     if (!isNaN(birthdate.getTime())) { //si !NO es un isNaN o sea error entonces break, rompo el loop
-      // If the birthdate is a valid date, break out of the loop
+      // If the birthdate is a valid date, break out of the loop. Ohh pero trata de transformar un número en fecha como el 7
+      //por eso no es tan bueno y podría usar: 
+      /*let dateRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+
+ Loop three times to give the user multiple chances to enter a valid date
+for (let i = 0; i < 3; i++) { 
+
+     //Prompt the user to enter their birth date
+    birthday = prompt("Please enter your birth day (MM/DD/YYYY)"); 
+
+    // Check if the input string matches the expected format using the dateRegex
+    if (dateRegex.test(birthday)) {
+
+        // If the format is valid, create a new date object from the input string
+        birthdate = new Date(birthday); 
+The regular expression dateRegex is used to check if the user input matches the expected format of "MM/DD/YYYY".
+
+The regular expression is defined using the syntax /^...$/, which means
+that the expression will match the entire input string. The expression consists of three parts:
+
+(\d{2}) matches exactly two digits, which represent the month.
+\/ matches the slash character between the month and day.
+(\d{2}) matches exactly two digits, which represent the day.
+\/ matches the slash character between the day and year.
+(\d{4}) matches exactly four digits, which represent the year.
+The ^ symbol at the start of the expression and the $ symbol at the end of the expression ensure that
+the entire input string must match the pattern defined by the expression.
+
+The parentheses around each part of the expression capture the matched substrings, which can be accessed
+using the RegExp.exec method or by using the special variables $1, $2, and $3 after the test method has been run.
+        */ 
       break;
     } else { //el else sería que sí es isNaN la fecha o sea no es una fecha válida
       // If the birthdate is not a valid date, show an error message y repite
