@@ -111,4 +111,24 @@ console.log("resultado de la suma de los  números consecutivos: " + result);
   console.log(i + " +")
 } while (i < 5);
     */ 
-    
+let userName = prompt("Please enter your username");
+document.addEventListener("DOMContentLoaded", function() {
+  let wp = document.createElement("h1"); //CON ESTO puedo crear lo que quiera hasta imágenes, img, ol, ul, li, a, etc.
+  //and add it to the document using appendChild() or insertBefore() methods.
+wp.innerHTML = "WELCOME "+ userName;
+document.body.appendChild(wp);
+// Change the font size of the header
+wp.style.fontSize = "84px";
+});
+let x = 5;
+--x; //--x++ is not valid, they should separate operations
+++x;
+let z = x;
+document.addEventListener("DOMContentLoaded", function() {
+  let wp = document.createElement("h1"); //CON ESTO puedo crear lo que quiera hasta imágenes, img, ol, ul, li, a, etc.
+  //and add it to the document using appendChild() or insertBefore() methods.
+wp.innerHTML = z;
+document.body.appendChild(wp);
+// Change the font size of the header
+wp.style.color = "#FF0000";
+});
