@@ -46,3 +46,69 @@ document.addEventListener("DOMContentLoaded", function() {
 p1.innerHTML = "Ale es " + ALE + " const fuera del loop exitosa";
 document.body.appendChild(p1);
   });
+
+  //aquí un ejemplo de chatgpt para hacer más corta la creación de párrafos:
+  document.addEventListener("DOMContentLoaded", function() {
+    for (let i = 0; i < 2; i++) {
+    if (i === 0) {
+    let Lunita = "mau";
+    let p1 = document.createElement("p");
+    p1.innerHTML = "gaty negruzca se llama " + Lunita;
+    document.body.appendChild(p1);
+    } else {
+    let p2 = document.createElement("p");
+    p2.innerHTML = "Gaty negruzca es undefined en el else loop terminado";
+    document.body.appendChild(p2);
+    }
+    }
+    let p3 = document.createElement("p");
+    p3.innerHTML = "No se puede usar Lunita variable fuera del loop";
+    document.body.appendChild(p3);  
+  });
+    let ruru;
+  document.addEventListener("DOMContentLoaded", function() {
+    for (let i = 0; i < 2; i++) {
+    if (i === 0) {
+    ruru = "ardilla";
+    let p1 = document.createElement("p");
+    p1.innerHTML = "gaty gritona se llama " + ruru;
+    document.body.appendChild(p1);
+    } else {
+    let p2 = document.createElement("p");
+    p2.innerHTML = "Gaty carey se llama " + ruru +" en el else loop terminado";
+    document.body.appendChild(p2);
+    }
+    }
+    let p3 = document.createElement("p");
+    p3.innerHTML = "gaty carey se llama " + ruru + " fuera del loop";
+    document.body.appendChild(p3);  
+  });
+    
+  document.addEventListener("DOMContentLoaded", function() {
+    let p1 = document.createElement("p");
+  p1.innerHTML = ruru + " es loquilla, afuera de la función de creación de párrafos";
+  document.body.appendChild(p1);
+    });
+//do while practice for adding consecutive numbers
+    let result = 0; //alternativamente puedo poner result= '' para que solo agregue los números como strings dando 12345
+let i = 0;
+
+do {
+  i = ++i; //esto lo puse de fancy pero era i = i+1 lo bueno es que me encontré con un error que colgaba el browser gracias a esto
+  result = result + i;
+  console.log(i + " +")
+} while (i < 5);
+
+console.log("resultado de la suma de los  números consecutivos: " + result);
+// Expected output: "12345" si hago lo de las comillas
+    /*interesante dato: 
+    do {
+  i = i++; Aquí hay un problema porque el operador de incremento se aplica después de aplicar la igualdad
+  esto significa que i=i se queda para cada siempre en cada loop i=0 nunca llegando a 5 y repitiendo por siempre colgando
+  el browser.
+  EN LUGAR de eso debería escribir ++i para que antes de asignar la igualdad se haga el incremento
+  result = result + i;
+  console.log(i + " +")
+} while (i < 5);
+    */ 
+    
