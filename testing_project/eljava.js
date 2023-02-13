@@ -132,3 +132,39 @@ document.body.appendChild(wp);
 // Change the font size of the header
 wp.style.color = "#FF0000";
 });
+
+let xy = 100 / "Apple";
+console.log( isNaN(xy) + xy); //al intentar hacer la suma true es 1 y false es 0 1+NaN=Nan
+/*The code you provided logs "NaN" to the console because the expression isNaN(xy) + xy results in the addition
+ of a boolean value and a number, which is not a valid operation in JavaScript.
+
+When you try to add a boolean value to a number, JavaScript converts the boolean value to a number (true becomes
+   1 and false becomes 0) and then performs the addition. isNaN(xy) returns true, which is then converted 
+   to the number 1 and added to xy, which is NaN.
+
+Since NaN is a special value in JavaScript that represents the result of an undefined or unrepresentable 
+number, any operation involving NaN will also result in NaN. As a result, the final value of the
+ expression isNaN(xy) + xy is NaN, which is what is logged to the console. */
+
+ let xz = 100 / "10"; //js trata de convertir en números los strings para hacer operaciones, excepto la suma porq ahí concatena
+console.log( !isNaN(xz) + xz); //esto da 11 porque el true se volvió 1. Es true pq no es NaN, es 10 ((true=1) + 10)
+
+//otra forma interesante de crear párrafos
+let myNumber = 2; 
+let txt = "";
+while (myNumber != Infinity) { //el loop sigue hasta que no alcance el valor de infinity que es muy grande pero no es infinito realmente
+   myNumber = myNumber * myNumber;
+   txt = "<p>"+ txt + myNumber + "</p>"; //esto me permite ir agrandando la variable txt, si quito txt sólo se imprime el valor
+   //final que toma. También vi que lee bien los tags p y br o salto de línea
+}
+//console.log(txt); ojo en console log no me sirve porq toma el p como texto, debo insertarlo en el html para que el p se interprete
+//como párrafo
+document.addEventListener("DOMContentLoaded", function() {
+  let p1 = document.createElement("p"); //acá creo el párrafo p
+  //en la siguiente línea experimenté agregando el tag h1 de html para ver si lo leía y sí lo leyó
+p1.innerHTML = "<h1>Este es el resultado del loop while al infinity</h1> "+ txt; //acá le digo qué va a contener p. Voy a poner el
+// resultado del while anterior
+document.body.appendChild(p1); //acá agrego el párrafo creado con su contenido al body del html
+// Change the font size of the header
+p1.style.color = "#104a8e";
+});
