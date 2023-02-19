@@ -57,12 +57,12 @@ document.body.appendChild(p1);
     document.body.appendChild(p1);
     } else {
     let p2 = document.createElement("p");
-    p2.innerHTML = "Gaty negruzca es undefined en el else loop terminado";
+    p2.innerHTML = "Gaty negruzca es undefined en el else loop terminado ";
     document.body.appendChild(p2);
     }
     }
     let p3 = document.createElement("p");
-    p3.innerHTML = "No se puede usar Lunita variable fuera del loop";
+    p3.innerHTML = "No se puede usar Lunita variable fuera del loop ";
     document.body.appendChild(p3);  
   });
     let ruru;
@@ -96,7 +96,7 @@ let i = 0;
 do {
   i = ++i; //esto lo puse de fancy pero era i = i+1 lo bueno es que me encontré con un error que colgaba el browser gracias a esto
   result = result + i;
-  console.log(i + " +")
+  console.log(i + " +") //lo imprime en distintas líneas porq al fin y al cabo son diferentes console.log
 } while (i < 5);
 
 console.log("resultado de la suma de los  números consecutivos: " + result);
@@ -146,8 +146,8 @@ Since NaN is a special value in JavaScript that represents the result of an unde
 number, any operation involving NaN will also result in NaN. As a result, the final value of the
  expression isNaN(xy) + xy is NaN, which is what is logged to the console. */
 
- let xz = 100 / "10"; //js trata de convertir en números los strings para hacer operaciones, excepto la suma porq ahí concatena
-console.log( !isNaN(xz) + xz); //esto da 11 porque el true se volvió 1. Es true pq no es NaN, es 10 ((true=1) + 10)
+ let xz = 20 / "10"; //js trata de convertir en números los strings para hacer operaciones, excepto la suma porq ahí concatena da 2
+console.log( !isNaN(xz) + xz); //esto da 3 porque el true se volvió 1. Es true pq no es NaN, es 10 ((true=1) + 2)
 
 //otra forma interesante de crear párrafos
 let myNumber = 2; 
@@ -167,4 +167,16 @@ p1.innerHTML = "<h1>Este es el resultado del loop while al infinity</h1> "+ txt;
 document.body.appendChild(p1); //acá agrego el párrafo creado con su contenido al body del html
 // Change the font size of the header
 p1.style.color = "#104a8e";
+});
+//probando Infinity
+let infi = 1e308*1.797;
+let infiMasUno = 1e308 * 1.798;
+document.addEventListener("DOMContentLoaded", function() {
+  let h3 = document.createElement("h3"); //acá creo el párrafo p
+  //en la siguiente línea experimenté agregando el tag h1 de html para ver si lo leía y sí lo leyó
+h3.innerHTML = "cercano a infinity "+ infi + "<br>pasado de infinity: " + infiMasUno ; //acá le digo qué va a contener p. Voy a poner el
+// resultado del while anterior
+document.body.appendChild(h3); //acá agrego el párrafo creado con su contenido al body del html
+// Change the font size of the header
+h3.style.color = "#104a8e";
 });
